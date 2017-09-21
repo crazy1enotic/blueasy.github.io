@@ -1,0 +1,315 @@
+//  HEADER
+.site-header {
+	.bg-img('bg_header.jpg');
+	-ms-behavior: url(/assets/ie8-support/backgroundsize.min.htc);
+
+	img {
+		margin-top: (38px - 23px )/2;
+	}
+}
+.site-nav {
+  background-color: @overlay;
+  background-color: fade(@overlay,85%);
+  padding: 60px 0;
+  
+  .horizontal-nav {
+    float: right;
+  }
+} // .site-nav
+
+.hero-heading {
+	margin: 250px 0;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 300;
+	font-size: 3em;
+	text-align: center;
+  
+  span {
+    background-color: @overlay;
+    background-color: fade(@overlay, 85%);
+    margin: 450px 0;
+    padding: 0 20px;
+  }
+} // .hero-heading
+
+//  SECTION SERVICES
+.stn-heading {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 2.143em;
+	margin-bottom: 40px;
+	margin-top: 0;
+	line-height: 1;
+
+	&:after {
+		display: table;
+		content: '';
+		height: 2px;
+		width: 45px;
+		background-color: #fff;
+		margin-top: 10px;
+	}
+
+	&.black-line:after {
+		background-color: @font;
+	}
+} // stn-heading
+.stn-services {
+	&:extend(.stn-padding);
+	background-color: @accent;
+	color: #fff;
+	font-weight: 500;
+
+	h3 {
+		text-transform: uppercase;
+		font-size: 1.714em;
+		line-height: 1;
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
+
+	[class^='col-'] {
+		@media (max-width: 1200px) {
+			margin-bottom: 50px;
+		}
+	}
+} // .stn-service
+
+//  SECTION PORTFOLIO
+.stn-portfolio {
+	&:extend(.stn-padding);
+
+	.horizontal-nav {
+		float: right;
+	}
+
+	.stn-heading {
+		margin-bottom: 80px;
+		// margin-left: -15px;
+	}
+} // .stn-portfolio
+.thumbs-row {
+	min-height: 270px + 270px + 30px;
+
+	[class^='col-'] {
+		margin-bottom: 30px;
+	}
+
+	a {
+		display: block;
+		height: 270px;
+		background-color: #979797;
+		position: relative;
+		opacity: .8;
+		color: #fff;
+		font-size: 72px;
+		text-align: center;
+		font-weight: 200;
+
+		&:after {
+			content: '+';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #454e56;
+			background-color: fade(#454e56, 80%);
+			line-height: 270 / 72;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;	
+		}
+
+		&:hover:after {
+			opacity: 1;
+			line-height: 1;
+		}
+	}
+} // .thumbs-row
+
+// Photo .thumb-i
+.thumb-1 {
+	.bg-img('photo_1.jpg');
+}
+
+.thumb-2 {
+	.bg-img('photo_2.jpg');
+}
+
+.thumb-3 {
+	.bg-img('photo_3.jpg');
+}
+
+.thumb-4 {
+	.bg-img('photo_4.jpg');
+}
+
+.thumb-5 {
+	.bg-img('photo_5.jpg');
+}
+
+.thumb-6 {
+	.bg-img('photo_6.jpg');
+}
+
+.thumb-7 {
+	.bg-img('photo_7.jpg');
+}
+
+.thumb-8 {
+	.bg-img('photo_8.jpg');
+}
+
+// Section with video
+.stn-video{
+    &:extend(.stn-padding);
+    background-color: #515f67;
+    color: #fff;
+    
+    .btn-ghost-grey {
+        margin-bottom: 50px;
+    }
+}
+.stn-video-col {
+    margin-top: -80px;
+    
+    @media (max-width: 992px){
+        margin-top: 0;
+    }
+}
+
+// Section Twitter
+.stn-twitter{
+    .stn-services();
+    
+    p {
+        font-size: 2em;
+        font-weight: 300;
+    }
+    
+    strong {
+        font-weight: 500;
+    }
+}
+.stn-twitter-icon {
+    font-size: 26px;
+    float: right;
+}
+
+// Section about who is john doe?
+.stn-about {
+    &:extend(.stn-padding);
+    .bg-img('bg_whoIs.jpg');
+    color: #fff;
+}
+.social-links {
+    &:extend(.ul-unstyled);
+    
+    li {
+        display: inline-block;
+        margin-right: 20px;
+     }   
+    a {
+        display: table;
+        color: #fff;
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+        text-align: center;
+        border: 2px solid #fff;
+        transition: all 0.3s ease-in-out;
+        
+        &:hover {
+            text-decoration: none;
+            color: @accent;
+            border-color: @accent;
+        }
+
+        i {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+    } // a
+    
+} // .social-links
+
+// Section testimonials
+.stn-testimonials {
+    &:extend(.stn-padding);
+    
+    stn-heading .stn-quote-icon {
+        float: right;
+        color: #515f67;
+        font-size: 30px;
+    }
+}
+.tst-quote {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 300;
+    
+    cite {
+        display: block;
+        margin-top: 30px;
+        color: @accent;
+        font-size: .5em;
+        font-weight: 600;
+    }   
+    
+}
+
+// Section contact
+.stn-contact {
+    &:extend(.stn-padding);
+    .bg-img('bg_contact.jpg');
+    color: #fff;
+} // .stn-contact
+.frm-text-col {
+    margin-top: 18px;
+    
+    @media (max-width: 768px){
+        margin-top: 0;
+    }
+}
+
+// Footer
+.site-footer {
+    &:extend(.stn-padding);
+    background-color: #353f47;
+    color: #515f67;
+    font-size: .857em;
+    font-weight: 500;
+} // .site-footer
+.footer-nav {
+    &:extend(.ul-unstyled);
+    float: left;
+    text-transform: uppercase;
+    
+    li {
+        display: inline-block;
+        
+        &:before {
+            content: '|';
+        }
+        
+        &:first-child {
+            &:before {
+                content: '';
+            }
+            a {
+                padding-left: 0;
+            }
+        }
+    }
+    
+    a {
+        display: inline-block;
+        padding: 0 10px;
+        color: inherit; 
+    }
+} // .footer-nav
+.copyright {
+    float: right;
+} // copyright

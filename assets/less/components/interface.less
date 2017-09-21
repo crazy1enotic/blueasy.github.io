@@ -1,0 +1,170 @@
+//forms, buttons, dialogs etc.
+//main navigation
+.horizontal-nav {
+    &:extend(.ul-unstyled);
+    li {
+        display: inline-block;
+        margin-left: 15px;
+        a {
+            .transition();
+            display: block;
+            border: 2px solid transparent;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 17px;
+            line-height: 1;
+            &.active {
+                border-color: @accent;
+                color: @accent;
+            }
+            &:hover {
+                color: @accent;
+            }
+        }
+    } //li
+    &.black-font a {
+        color: @font;
+    }
+}
+
+// RESPONSIVE Menu 
+.main-nav-trigger {
+    display: none;
+    font-size: 45px;
+    color: #fff;
+    float: right;
+    line-height: 1;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    
+    &:hover {
+        color: @accent;
+    }
+} //.main-nav-trigger
+@media (max-width: 992px) {
+    .main-logo {
+        float: left;
+    }
+    .main-nav-trigger {
+        display: block;
+    }
+    .site-nav {
+        position: relative;
+        
+        .horizontal-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: @overlay;
+
+            li {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+                text-align: center;
+                border-bottom: 1px solid lighten(@overlay, 5%);
+            }
+
+            a {
+                display: inline-block;
+                margin: 20px 30px;
+
+                &.active {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+    
+    .horizontal-nav {
+        li {
+            margin-left: 8px;
+            a {
+                padding: 10px 15px;
+            }
+        } //li
+    }
+} // @media 992px
+
+
+// iframe responsive video
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// buttons 
+.btn-ghost(@c: #353f46, @c-hover: #fff, @font: 1em){
+    display: inline-block;
+    padding: 1.07em 2.857em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1;
+    color: @c;
+    border: 2px solid @c;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        text-decoration: none;
+        color: @c-hover;
+        border-color: @c-hover;
+    }
+}
+
+.brn-ghost-grey {
+    .btn-ghost();
+}
+
+// Form 
+.frm-group {
+    margin-bottom: 35px;
+} // .frm-group
+.frm-control {
+    background-color: transparent;
+    border: 2px solid #fff;
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+       
+}
+textarea.frm-control {
+    height: 215px;
+}
+label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.btn-submit {
+    width: 100%;
+    background-color: @accent;
+    color: #fff;
+    border: 2px solid @accent;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    padding: 25px 0;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        background-color: transparent;
+        color: @accent;
+    }
+    
+    
+}
